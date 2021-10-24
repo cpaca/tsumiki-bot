@@ -2,6 +2,8 @@ package util;
 
 public class STATICS {
 
+    // This file is in .gitignore ONLY because the tokens are in here.
+    // I'll know if this has failed because
     public static final boolean is_dev = false;
 
     private static String TOKEN = "MzkwMzQ3NjQwNDM4NTIxODU2.XtbATQ.OJgMa3INRq-VAEBRsr8GEK38Woo";
