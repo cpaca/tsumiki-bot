@@ -3,7 +3,8 @@ package util;
 public class STATICS {
 
     // This file is in .gitignore ONLY because the tokens are in here.
-    // I'll know if this has failed because
+    // I'll know if this has failed because discord will send me a DM if it does
+    // I know it'll send me a DM because the first time I did this, it didn't work and they sent me a DM within ONE SECOND.
     public static final boolean is_dev = false;
 
     private static String TOKEN = "MzkwMzQ3NjQwNDM4NTIxODU2.XtbATQ.OJgMa3INRq-VAEBRsr8GEK38Woo";
