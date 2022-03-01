@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class care extends Command {
+public class care extends CommandProcessor {
 
     public care(){
         cmd = "care";

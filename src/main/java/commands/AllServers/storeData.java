@@ -2,12 +2,10 @@ package commands.AllServers;
 
 import Filehandling.Data;
 import Filehandling.Filehandler;
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-import java.util.logging.FileHandler;
-
-public class storeData extends Command {
+public class storeData extends CommandProcessor {
 
     public storeData(){
         cmd = "storeData";

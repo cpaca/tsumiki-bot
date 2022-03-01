@@ -1,11 +1,11 @@
 package commands.AcchiKocchi;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class role extends Command {
+public class role extends CommandProcessor {
 
     public role(){
         cmd = "role";

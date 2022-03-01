@@ -1,10 +1,10 @@
 package commands.UWSLPassive;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class OK extends Command {
+public class OK extends CommandProcessor {
 
     public OK(){
         // passive

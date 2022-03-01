@@ -2,10 +2,10 @@ package commands.AllServers;
 
 import Filehandling.Data;
 import Filehandling.Filehandler;
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class ModifyConfigs extends Command {
+public class ModifyConfigs extends CommandProcessor {
 
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {

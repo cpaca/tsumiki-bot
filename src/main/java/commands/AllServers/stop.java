@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class stop extends Command {
+public class stop extends CommandProcessor {
 
     private static final String STOP =
             "█████░█████░█████░████░░ \n" +

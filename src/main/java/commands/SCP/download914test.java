@@ -1,8 +1,7 @@
 package commands.SCP;
 
 import Filehandling.Filehandler;
-import core.Command;
-import core.CommandListener;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class download914test extends Command {
+public class download914test extends CommandProcessor {
 
     public static final String requestURL = "http://www.scp-wiki.net/ajax-module-connector.php";
     public static final String baseURL = "http://www.scp-wiki.net/fragment:experiment-log-914-";

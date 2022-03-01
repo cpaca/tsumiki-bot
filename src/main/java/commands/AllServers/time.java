@@ -1,12 +1,12 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class time extends Command {
+public class time extends CommandProcessor {
 
     public time(){
         cmd = "time";

@@ -1,9 +1,9 @@
 package commands.SCP;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class Basic914Test extends Command {
+public class Basic914Test extends CommandProcessor {
 
     public Basic914Test(){
         cmd = "914test";

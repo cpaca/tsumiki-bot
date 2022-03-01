@@ -1,10 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class australianserver extends Command {
+public class australianserver extends CommandProcessor {
 
     public australianserver(){
         cmd = "australianserver";

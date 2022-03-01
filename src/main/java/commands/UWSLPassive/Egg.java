@@ -1,9 +1,9 @@
 package commands.UWSLPassive;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class Egg extends Command {
+public class Egg extends CommandProcessor {
 
     public Egg(){
         // passive

@@ -1,13 +1,13 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.*;
 
-public class roll extends Command {
+public class roll extends CommandProcessor {
 
     private static final String sortString = "sorted";
     private static final String compactsorted = "compactsorted";

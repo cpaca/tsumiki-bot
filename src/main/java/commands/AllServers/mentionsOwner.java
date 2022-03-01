@@ -1,13 +1,13 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import javax.annotation.Nonnull;
 
-public class mentionsOwner extends Command {
+public class mentionsOwner extends CommandProcessor {
 
     public mentionsOwner(){
 

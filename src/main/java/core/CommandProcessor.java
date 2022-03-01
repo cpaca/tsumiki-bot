@@ -4,24 +4,24 @@ import Filehandling.Data;
 import Filehandling.Filehandler;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
 
-import javax.annotation.Nonnull;
-
-public abstract class Command implements MessageFunctions{
+public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions{
 
     protected String cmd = "";
     protected String help = "";
     protected int category = CategoryHandler.getCategoryNum("No Category");
     public final boolean nsfw;
+    private static CommandProcessor instance;
 
-    public Command(){
+    public CommandProcessor(){
         this(false);
     }
 
-    public Command(boolean nsfw){
+    public CommandProcessor(boolean nsfw){
         this.nsfw = nsfw;
 
     }
@@ -48,25 +48,25 @@ public abstract class Command implements MessageFunctions{
         return c.getData("O5").equals("1");
     }
 
-    public void onMessage(@Nonnull String message, MessageReceivedEvent event){
-        if(canUseCommand(event)) {
-            try {
-                MessageReceived(message, event);
-            } catch (InsufficientPermissionException ipe){
-                // Ignore.
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+    // Note: OnMessageReceived shouldn't need any preprocessing.
+
+
+
+    // Slash command preprocessing:
+    // Check if the command event is for THIS command or for some other command.
+    // Note: The docs still say to use "SlashCommandEvent"
+    // but it doesn't exist anymore, and checking DV8FromTheWorld/JDA #1971 it was renamed
+    // to SlashCommandInteractionEvent
+    public void onSlashCommand(SlashCommandInteractionEvent event){
+
     }
+
+    protected abstract void ProcessSlashCommand(SlashCommandInteractionEvent event);
 
     protected abstract void MessageReceived(String message, MessageReceivedEvent event);
 
     public String getCmd(){
         return cmd;
-    }
-    public String getHelp(){
-        return CommandListener.prefix + cmd + " : " + help;
     }
     public int getCategory() {
         return category;
@@ -108,7 +108,7 @@ public abstract class Command implements MessageFunctions{
         return mention(m.getUser());
     }
 
-    public static void joinVoiceChannel(VoiceChannel channel){
+    public static void joinVoiceChannel(AudioChannel channel){
         Guild g = channel.getGuild();
         AudioManager mgr = g.getAudioManager();
         mgr.openAudioConnection(channel);
@@ -122,7 +122,7 @@ public abstract class Command implements MessageFunctions{
         if(state == null){
             throw new IllegalArgumentException();
         }
-        VoiceChannel channel = state.getChannel();
+        AudioChannel channel = state.getChannel();
         if(channel == null){
             throw new IllegalArgumentException();
         }

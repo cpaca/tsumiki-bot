@@ -1,10 +1,10 @@
 package commands.UWSLPassive;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class tenken extends Command {
+public class tenken extends CommandProcessor {
 
     private int odds = 1000;
 
