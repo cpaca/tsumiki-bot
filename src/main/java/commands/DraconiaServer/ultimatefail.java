@@ -1,10 +1,10 @@
 package commands.DraconiaServer;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class ultimatefail extends Command {
+public class ultimatefail extends CommandProcessor {
 
     public ultimatefail(){
         cmd = "ultimatefail";

@@ -30,12 +30,6 @@ public class ModifyConfigs extends CommandProcessor {
             if(!super.isDeveloper(event)){
                 return;
             }
-            if(message.equalsIgnoreCase("join vc")){
-                joinMemberVoiceChannel(event.getMember());
-            }
-            if(message.equalsIgnoreCase("leave vc")){
-                leaveVoiceChannel(event.getGuild());
-            }
         }
     }
 

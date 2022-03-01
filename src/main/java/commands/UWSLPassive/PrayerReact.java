@@ -1,12 +1,12 @@
 package commands.UWSLPassive;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.concurrent.TimeUnit;
 
-public class PrayerReact extends Command {
+public class PrayerReact extends CommandProcessor {
 
     public PrayerReact(){
 

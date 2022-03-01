@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class hammertime extends Command {
+public class hammertime extends CommandProcessor {
 
     private static final String hammertime =
             "" +

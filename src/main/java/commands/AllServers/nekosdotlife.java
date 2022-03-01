@@ -1,6 +1,6 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -12,7 +12,7 @@ import java.net.URLConnection;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class nekosdotlife extends Command {
+public class nekosdotlife extends CommandProcessor {
 
     //Remember: https://github.com/Nekos-life/nekos.py/blob/master/nekos/nekos.py
     private Map<String,Boolean> cmds;

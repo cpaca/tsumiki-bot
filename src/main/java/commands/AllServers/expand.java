@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class expand extends Command {
+public class expand extends CommandProcessor {
 
     public expand(){
         cmd = "expand";

@@ -23,7 +23,6 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
 
     public CommandProcessor(boolean nsfw){
         this.nsfw = nsfw;
-
     }
 
     public boolean canUseCommand(MessageReceivedEvent event){
@@ -61,9 +60,16 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
 
     }
 
-    protected abstract void ProcessSlashCommand(SlashCommandInteractionEvent event);
+    // By default, do nothing.
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event){
 
-    protected abstract void MessageReceived(String message, MessageReceivedEvent event);
+    }
+
+    // By default, do nothing.
+    // Let whatever this command is handle doing this.
+    protected void MessageReceived(String message, MessageReceivedEvent event){
+
+    }
 
     public String getCmd(){
         return cmd;
@@ -74,12 +80,11 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     public boolean isPassive(){
         return help.equals("");
     }
-
     protected void setCategory(String name) {
         category = CategoryHandler.getCategoryNum(name);
     }
-
     protected String adjustString(String s, int len, String adjustant){
+        // Note from future me: This is just string left pad?
         while(s.length() < len){
             s = adjustant + s;
         }
@@ -106,31 +111,6 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
 
     protected String mention(Member m){
         return mention(m.getUser());
-    }
-
-    public static void joinVoiceChannel(AudioChannel channel){
-        Guild g = channel.getGuild();
-        AudioManager mgr = g.getAudioManager();
-        mgr.openAudioConnection(channel);
-    }
-
-    public static void joinMemberVoiceChannel(Member m){
-        if(m == null){
-            throw new IllegalArgumentException();
-        }
-        GuildVoiceState state = m.getVoiceState();
-        if(state == null){
-            throw new IllegalArgumentException();
-        }
-        AudioChannel channel = state.getChannel();
-        if(channel == null){
-            throw new IllegalArgumentException();
-        }
-        joinVoiceChannel(channel);
-    }
-
-    public static void leaveVoiceChannel(Guild g){
-        g.getAudioManager().closeAudioConnection();
     }
 
     // Whether a user is opted into or out of saving data

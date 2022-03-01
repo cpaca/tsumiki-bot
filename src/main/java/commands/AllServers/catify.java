@@ -1,12 +1,12 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public class catify extends Command {
+public class catify extends CommandProcessor {
 
     private ArrayList<Catifier> catifiers = new ArrayList<>();
     private static String letters = "";

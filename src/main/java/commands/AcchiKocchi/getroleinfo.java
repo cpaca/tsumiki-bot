@@ -1,12 +1,12 @@
 package commands.AcchiKocchi;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class getroleinfo extends Command {
+public class getroleinfo extends CommandProcessor {
 
     static final Map<String,String> map = new LinkedHashMap<>();
 

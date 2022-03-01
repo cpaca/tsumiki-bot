@@ -1,12 +1,12 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class blackboardBold extends Command {
+public class blackboardBold extends CommandProcessor {
 
     // apparantly the blackboard boldface versions count as 2 characters
     Map<String, String> transformations = new HashMap<>();

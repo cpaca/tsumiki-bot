@@ -1,9 +1,9 @@
 package commands.DraconiaServer;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class intercepted extends Command {
+public class intercepted extends CommandProcessor {
 
     public intercepted(){
         cmd = "intercepted";

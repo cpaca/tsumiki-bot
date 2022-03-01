@@ -1,10 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class roasted extends Command {
+public class roasted extends CommandProcessor {
 
     public roasted(){
         cmd = "roasted";

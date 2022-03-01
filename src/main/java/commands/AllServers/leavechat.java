@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class leavechat extends Command {
+public class leavechat extends CommandProcessor {
 
     public leavechat(){
         cmd = "leavechat";

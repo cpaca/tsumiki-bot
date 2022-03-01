@@ -3,14 +3,11 @@ package commands.AllServers;
 import Filehandling.Data;
 import Filehandling.Date;
 import Filehandling.Filehandler;
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-import java.time.Month;
-import java.time.Year;
-
-public class coingame extends Command {
+public class coingame extends CommandProcessor {
 
     private int[] fibNums = new int[48];
     // 0th index is 0 heads, 1st index is 1 head, etc.

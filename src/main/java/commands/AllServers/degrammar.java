@@ -1,10 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class degrammar extends Command {
+public class degrammar extends CommandProcessor {
 
     public degrammar(){
         cmd = "degrammar";

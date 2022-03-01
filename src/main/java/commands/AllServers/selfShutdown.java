@@ -1,9 +1,9 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class selfShutdown extends Command {
+public class selfShutdown extends CommandProcessor {
 
     public selfShutdown(){
         //not a command. Developer item.

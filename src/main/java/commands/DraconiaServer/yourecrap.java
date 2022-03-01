@@ -1,10 +1,10 @@
 package commands.DraconiaServer;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class yourecrap extends Command {
+public class yourecrap extends CommandProcessor {
 
     public yourecrap(){
         cmd = "yourecrap";

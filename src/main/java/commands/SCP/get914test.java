@@ -1,7 +1,7 @@
 package commands.SCP;
 
 import Filehandling.Filehandler;
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class get914test extends Command {
+public class get914test extends CommandProcessor {
 
     public get914test(){
         cmd = "get914test";

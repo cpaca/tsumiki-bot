@@ -1,10 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class netneutrality extends Command {
+public class netneutrality extends CommandProcessor {
 
     public netneutrality(){
         cmd = "netneutrality";
