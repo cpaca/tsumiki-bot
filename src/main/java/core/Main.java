@@ -1,6 +1,5 @@
 package core;
 
-import ListenerV2.*;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.requests.GatewayIntent;

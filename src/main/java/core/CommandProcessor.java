@@ -7,15 +7,20 @@ import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.managers.AudioManager;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions{
 
     protected String cmd = "";
     protected String help = "";
+    protected String desc = "";
     protected int category = CategoryHandler.getCategoryNum("No Category");
     public final boolean nsfw;
-    private static CommandProcessor instance;
 
     public CommandProcessor(){
         this(false);
@@ -48,8 +53,11 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     }
 
     // Note: OnMessageReceived shouldn't need any preprocessing.
+    // By default, do nothing.
+    // Let whatever this command is handle doing this.
+    protected void MessageReceived(String message, MessageReceivedEvent event){
 
-
+    }
 
     // Slash command preprocessing:
     // Check if the command event is for THIS command or for some other command.
@@ -57,7 +65,10 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     // but it doesn't exist anymore, and checking DV8FromTheWorld/JDA #1971 it was renamed
     // to SlashCommandInteractionEvent
     public void onSlashCommand(SlashCommandInteractionEvent event){
-
+        String name = event.getName();
+        if(name.equals(this.getCmd())){
+            ProcessSlashCommand(event);
+        }
     }
 
     // By default, do nothing.
@@ -65,14 +76,35 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
 
     }
 
-    // By default, do nothing.
-    // Let whatever this command is handle doing this.
-    protected void MessageReceived(String message, MessageReceivedEvent event){
+    // Get this command's CommandData
+    public CommandData getCommandData(){
+        if(getCmd().equals("")){
+            return null;
+        }
+        if(getDesc().equals("")){
+            return null;
+        }
+        CommandData out = new CommandDataImpl(getCmd(), getDesc());
+        out = UpdateCommandData(out);
+        return out;
+    }
 
+    // In case the command wants to do something EX add options
+    protected CommandData UpdateCommandData(CommandData data){
+        return data;
     }
 
     public String getCmd(){
         return cmd;
+    }
+    public String getHelp(){
+        return help;
+    }
+    public String getDesc(){
+        if(desc.equals("")) {
+            return getHelp();
+        }
+        return desc;
     }
     public int getCategory() {
         return category;
