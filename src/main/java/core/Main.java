@@ -38,19 +38,6 @@ public class Main {
         builder.setAutoReconnect(true);
         builder.setStatus(OnlineStatus.ONLINE);
 
-        //*
-        builder.addEventListeners(KaliumListener.getInstance(),
-                AllServerListenerV2.getInstance(),
-                AcchiKocchiListenerV2.getInstance(),
-                DraconiaListenerV2.getInstance(),
-                SCPListener.getInstance(),
-                UWSLListener.getInstance(),
-                QuestionListener.getInstance());
-        /*/
-        // developer mode.
-        builder.addEventListeners(AllServerListenerV2.getInstance());
-        //*/
-
         try {
             jda = builder.build();
         } catch (LoginException e) {

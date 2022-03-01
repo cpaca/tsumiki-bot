@@ -80,7 +80,6 @@ public class coingame extends Command {
             }
             else{
                 if(lastGameDay.sameYear(today)){
-                    System.out.println(lastGameDay.getYear() + " is the same year as " + today.getYear());
                     // same year
                     if(heads > YearlyBest){
                         out += "**Yearly PB!** Previous best score of the year: " + YearlyBest + " heads\n";

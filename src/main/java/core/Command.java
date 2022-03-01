@@ -23,6 +23,7 @@ public abstract class Command implements MessageFunctions{
 
     public Command(boolean nsfw){
         this.nsfw = nsfw;
+
     }
 
     public boolean canUseCommand(MessageReceivedEvent event){
@@ -132,6 +133,8 @@ public abstract class Command implements MessageFunctions{
         g.getAudioManager().closeAudioConnection();
     }
 
+    // Whether a user is opted into or out of saving data
+    // If they aren't opted in *or* out, it opts them out and tells them how to opt in.
     public static boolean isOptedIn(User user, MessageChannel channel){
         Data d = Filehandler.getUserData(user);
         if(d.getData("optin").equalsIgnoreCase("true")){
