@@ -19,8 +19,8 @@ public class meat extends CommandProcessor {
     public void MessageReceived(String s, MessageReceivedEvent event){
         EmbedBuilder meat = buildImage("","https://cdn.discordapp.com/attachments/626218261343764503/662321236654948372/meat.png");
         EmbedBuilder meow = buildImage("","https://cdn.discordapp.com/emojis/484904964985061376.gif?v=1");
-        Message msg = event.getChannel().sendMessage(meat.build()).complete();
-        msg.editMessage(meow.build()).queueAfter(5, TimeUnit.SECONDS);
+        Message msg = event.getChannel().sendMessageEmbeds(meat.build()).complete();
+        msg.editMessageEmbeds(meow.build()).queueAfter(5, TimeUnit.SECONDS);
     }
 
 }

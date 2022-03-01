@@ -15,6 +15,6 @@ public class heilphoto extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("Heil photo!","IRm6gkR.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

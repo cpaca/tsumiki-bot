@@ -15,6 +15,6 @@ public class notacommand extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("Oh god oh fuck it's a command","upPpVA0.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

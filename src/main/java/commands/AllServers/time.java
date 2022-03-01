@@ -25,10 +25,10 @@ public class time extends CommandProcessor {
         String month = getMonth(c.get(Calendar.MONTH));
         String year = "" + c.get(Calendar.YEAR);
 
-        second = adjustString(second,2,"0");
-        minute = adjustString(minute,2,"0");
-        hour = adjustString(hour,2,"0");
-        day = adjustString(day,2,"0");
+        second = leftPad(second,2,"0");
+        minute = leftPad(minute,2,"0");
+        hour = leftPad(hour,2,"0");
+        day = leftPad(day,2,"0");
 
         String msg = "It is " + date + ", " + month + " " + day + ", " + year + ", and the time is " + hour + ":" + minute + ":" + second + " in the UTC timezone.";
         event.getChannel().sendMessage(msg).queue();

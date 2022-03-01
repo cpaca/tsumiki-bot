@@ -15,6 +15,6 @@ public class christianserver extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("sOrRy,tHiS iS a ChRiStIaN SeRvEr So No SwEaRiNg","5t3zwBU.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

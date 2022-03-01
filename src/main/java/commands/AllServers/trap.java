@@ -15,6 +15,6 @@ public class trap extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("IT'S A TRAP","gfsxJVA.gif");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

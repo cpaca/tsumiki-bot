@@ -15,6 +15,6 @@ public class netneutrality extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("NET NEUTRALITY HAS DIED. To continue reading this message, please pay $5.","fjChkf0.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

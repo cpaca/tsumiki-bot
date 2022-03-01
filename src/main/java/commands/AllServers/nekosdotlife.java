@@ -71,7 +71,7 @@ public class nekosdotlife extends CommandProcessor {
             desc += "If the image is an NSFW one, please go contact the https://nekos.life owners that the link above is NSFW, despite being in a SFW section.";
         }
         EmbedBuilder builder = buildImage(desc,imageURL);
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 
     private Map<String,Boolean> getCmds(){

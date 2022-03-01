@@ -17,8 +17,8 @@ public class failuretoedit extends CommandProcessor {
         EmbedBuilder nested = buildImgur("Nested!","fcPfozw.png");
         EmbedBuilder doublenest = buildImgur("Double Nested!","mIloho5.png");
         EmbedBuilder failure = buildImgur("FAIL.","KclcO0t.png");
-        event.getChannel().sendMessage(nested.build()).queue();
-        event.getChannel().sendMessage(doublenest.build()).queue();
-        event.getChannel().sendMessage(failure.build()).queue();
+        event.getChannel().sendMessageEmbeds(nested.build()).queue();
+        event.getChannel().sendMessageEmbeds(doublenest.build()).queue();
+        event.getChannel().sendMessageEmbeds(failure.build()).queue();
     }
 }

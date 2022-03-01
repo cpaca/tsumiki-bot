@@ -3,7 +3,12 @@ package commands.AcchiKocchi;
 import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.entities.Guild;
 
 public class role extends CommandProcessor {
 
@@ -11,38 +16,74 @@ public class role extends CommandProcessor {
         cmd = "role";
         help = "Used to add or remove roles from yourself.";
         setCategory("Acchi Kocchi");
+        guild = 413108124556328980L;
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        if(!message.contains(" ")){
-            event.getChannel().sendMessage("Invalid input.").queue();
+    public CommandDataImpl UpdateCommandData(CommandDataImpl data){
+        SubcommandData add = new SubcommandData("add", "Add a role to yourself")
+                .addOption(OptionType.STRING, "target", "The role to add to yourself", true);
+        SubcommandData remove = new SubcommandData("remove", "Remove a role from yourself")
+                .addOption(OptionType.STRING, "target", "The role to remove from yourself", true);
+
+        data = data.addSubcommands(add, remove);
+        return data;
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        String subcommand = event.getSubcommandName();
+        OptionMapping commandOption = event.getOption("target");
+
+        if(commandOption == null){
+            // it was a required option, this shouldn't happen
+            event.reply("Internal error; try again maybe? ID #AK001").queue();
             return;
         }
-        Member m = event.getMember();
-        if(m == null) {
+
+        String rolename = commandOption.getAsString().toLowerCase();
+        Guild guild = event.getGuild();
+
+        if(guild == null){
+            // really shouldn't happen
+            event.reply("Internal error; try again maybe? ID #AK002").queue();
             return;
         }
-        String operation = message.substring(0,message.indexOf(" "));
-        message = message.substring(message.indexOf(" ") + 1);
-        message = message.toLowerCase();
-        if(!getroleinfo.map.containsKey(message)){
-            event.getChannel().sendMessage("Invalid role!").queue();
+
+        String roleID = getroleinfo.map.get(rolename);
+        if(roleID == null){
+            // Hmm.
+            event.reply("Internal error; try again maybe? ID #AK006").queue();
             return;
         }
-        Role role = event.getGuild().getRoleById(getroleinfo.map.get(message));
+        Role role = guild.getRoleById(roleID);
+
         if(role == null){
-            event.getChannel().sendMessage("Looks like some RoleIDs have changed. Go tell Tsumiki-chan, please!").queue();
+            event.reply("Internal error; maybe ping Tsumiki Miniwa. ID #AK003").queue();
             return;
         }
-        if(operation.equals("add")){
-            event.getGuild().addRoleToMember(m,role).queue();
+
+        if(subcommand == null){
+            event.reply("Internal error; try again later. ID #AK004").queue();
+            return;
         }
-        else if(operation.equals("remove")){
-            event.getGuild().removeRoleFromMember(m,role).queue();
+
+        Member caller = event.getMember();
+        if(caller == null){
+            event.reply("Internal error; try again later. ID #AK005").queue();
+            return;
+        }
+
+        if(subcommand.equals("add")){
+            event.getGuild().addRoleToMember(caller, role).queue();
+            event.reply("Added role: " + role.getName()).queue();
+        }
+        else if(subcommand.equals("remove")){
+            event.getGuild().removeRoleFromMember(caller, role).queue();
+            event.reply("Removed role: " + role.getName()).queue();
         }
         else{
-            event.getChannel().sendMessage("Invalid operation.").queue();
+            event.reply("Apparantly you didn't put either add OR remove. I thought discord would throw an error for that.").queue();
         }
     }
 }

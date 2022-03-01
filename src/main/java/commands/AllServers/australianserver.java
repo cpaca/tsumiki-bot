@@ -15,6 +15,6 @@ public class australianserver extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("sOrRy,tHiS iS aN aUsTrAlIaN sErVeR sO yOu DiDn'T sWeAr EnOuGh","L1BPVUT.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

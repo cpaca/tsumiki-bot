@@ -4,23 +4,22 @@ import Filehandling.Data;
 import Filehandling.Filehandler;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.dv8tion.jda.api.managers.AudioManager;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Nonnull;
 
-public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions{
+public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions {
 
     protected String cmd = "";
     protected String help = "";
     protected String desc = "";
     protected int category = CategoryHandler.getCategoryNum("No Category");
     public final boolean nsfw;
+    protected long guild = 0;
 
     public CommandProcessor(){
         this(false);
@@ -53,8 +52,7 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     }
 
     // Note: OnMessageReceived shouldn't need any preprocessing.
-    // By default, do nothing.
-    // Let whatever this command is handle doing this.
+    // Keep this command in until all functions are updated.
     protected void MessageReceived(String message, MessageReceivedEvent event){
 
     }
@@ -64,7 +62,8 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     // Note: The docs still say to use "SlashCommandEvent"
     // but it doesn't exist anymore, and checking DV8FromTheWorld/JDA #1971 it was renamed
     // to SlashCommandInteractionEvent
-    public void onSlashCommand(SlashCommandInteractionEvent event){
+    @Override
+    public void onSlashCommandInteraction(SlashCommandInteractionEvent event){
         String name = event.getName();
         if(name.equals(this.getCmd())){
             ProcessSlashCommand(event);
@@ -77,20 +76,20 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     }
 
     // Get this command's CommandData
-    public CommandData getCommandData(){
+    public CommandDataImpl getCommandData(){
         if(getCmd().equals("")){
             return null;
         }
         if(getDesc().equals("")){
             return null;
         }
-        CommandData out = new CommandDataImpl(getCmd(), getDesc());
+        CommandDataImpl out = new CommandDataImpl(getCmd(), getDesc());
         out = UpdateCommandData(out);
         return out;
     }
 
     // In case the command wants to do something EX add options
-    protected CommandData UpdateCommandData(CommandData data){
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data){
         return data;
     }
 
@@ -112,10 +111,13 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     public boolean isPassive(){
         return help.equals("");
     }
+    public long getGuild(){
+        return guild;
+    }
     protected void setCategory(String name) {
         category = CategoryHandler.getCategoryNum(name);
     }
-    protected String adjustString(String s, int len, String adjustant){
+    protected String leftPad(String s, int len, String adjustant){
         // Note from future me: This is just string left pad?
         while(s.length() < len){
             s = adjustant + s;

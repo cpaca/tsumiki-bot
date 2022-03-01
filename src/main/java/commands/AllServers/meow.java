@@ -15,6 +15,6 @@ public class meow extends CommandProcessor {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event){
         EmbedBuilder builder = buildImage("","https://cdn.discordapp.com/emojis/484904964985061376.gif?v=1");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

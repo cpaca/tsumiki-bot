@@ -76,14 +76,14 @@ public class get914test extends CommandProcessor {
         for (String field : fields){
             if(numFields == 4){
                 numFields = 0;
-                event.getChannel().sendMessage(builder.build()).queue();
+                event.getChannel().sendMessageEmbeds(builder.build()).queue();
                 builder = new EmbedBuilder();
             }
             numFields++;
             builder.addField("",field,false);
         }
         if(numFields != 0) {
-            event.getChannel().sendMessage(builder.build()).queue();
+            event.getChannel().sendMessageEmbeds(builder.build()).queue();
         }
     }
 

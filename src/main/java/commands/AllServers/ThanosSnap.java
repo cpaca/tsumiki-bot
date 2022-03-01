@@ -27,7 +27,7 @@ public class ThanosSnap extends CommandProcessor {
             GuildVoiceState gvs = m.getVoiceState();
             if(gvs == null)
                 return;
-            VoiceChannel channel = gvs.getChannel();
+            AudioChannel channel = gvs.getChannel();
             if(channel == null)
                 return;
 

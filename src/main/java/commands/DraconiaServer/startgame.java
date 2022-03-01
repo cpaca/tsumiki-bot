@@ -1,6 +1,5 @@
 package commands.DraconiaServer;
 
-import ListenerV2.DraconiaListenerV2;
 import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -29,6 +28,6 @@ public class startgame extends CommandProcessor {
                 username = nickname;
             }
         }
-        DraconiaListenerV2.Registered.sendMessage("@here Game started by " + username + ". Game name: " + message).queue();
+
     }
 }
