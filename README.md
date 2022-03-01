@@ -18,7 +18,7 @@ Write Bot V3, with:
 
 --> Fix /help so that it doesn't spam 100 messages.
 
----> (Idea: Make /help **its own CommandCore** that contacts Central?)
+--> Remove all CommandCores, they aren't necessary. Now that Slash Commands are a thing, I think it's easier to make each Command a CommandCore.
 
 --> cats!
 
