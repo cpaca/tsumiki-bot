@@ -36,19 +36,17 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
             if(event.getChannel().getId().equals("639356953272909834")){
                 return true;
             }
-            return isDeveloper(event);
+            return isDeveloper(event.getAuthor());
         }
         return true;
     }
 
-    protected final boolean isDeveloper(MessageReceivedEvent event){
-        if(!event.getAuthor().getId().equals("205011703891623936"))
-            return false;
-        // do not run this command very often, it opens and closes files.
-        Data c = Filehandler.getConfig("developer");
-        if(c == null)
-            return false;
-        return c.getData("O5").equals("1");
+    protected final boolean isDeveloper(User user){
+        if(user.getIdLong() == 205011703891623936L){
+            Data c = Filehandler.getConfig("developer");
+            return true;
+        }
+        return false;
     }
 
     // Note: OnMessageReceived shouldn't need any preprocessing.
@@ -139,32 +137,24 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
         return buildImage(desc,"https://imgur.com/" + ImgurID);
     }
 
-    protected String mention(User u){
-        return "<@!" + u.getId() + ">";
-    }
-
-    protected String mention(Member m){
-        return mention(m.getUser());
-    }
-
     // Whether a user is opted into or out of saving data
-    // If they aren't opted in *or* out, it opts them out and tells them how to opt in.
-    public static boolean isOptedIn(User user, MessageChannel channel){
+    // Note:
+    // Returns 1 for "opted in"
+    // Returns -1 for "opted out"
+    // Returns 0 for "neither side, go tell the user."
+    public static int isOptedIn(User user){
         Data d = Filehandler.getUserData(user);
         if(d.getData("optin").equalsIgnoreCase("true")){
-            return true;
+            return 1;
         }
         else if(d.getData("optin").equalsIgnoreCase("false")){
-            return false;
+            return -1;
         }
         else{
             d.setData("optin","false");
             Filehandler.saveData(d);
 
-            channel.sendMessage("To opt into saving data (e.g. high scores), do ``!storeData true``.\n" +
-                    "By default, you have been opted-out of storing this information.").complete();
-
-            return false;
+            return 0;
         }
     }
 }

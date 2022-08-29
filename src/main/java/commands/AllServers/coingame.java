@@ -5,7 +5,12 @@ import Filehandling.Date;
 import Filehandling.Filehandler;
 import core.CommandProcessor;
 import core.Main;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 public class coingame extends CommandProcessor {
 
@@ -16,17 +21,47 @@ public class coingame extends CommandProcessor {
 
     public coingame(){
         cmd = "coingame";
-        help = "Coin game! The score is the x-th fibonacchi sequence, subtracted by " + gamecost + ".\n" +
-                "Use ``!coingame get data`` to get statistics about your coingames (e.g. best score today)";
+        help = "Coin game! The score is the x-th fibonacchi number, minus " + gamecost + ".\n";
         setCategory("TextIO");
 
         fibNums[1] = 1;
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        if(message.equalsIgnoreCase("get data")){
-            Data d = Filehandler.getUserData(event.getAuthor());
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.INTEGER, "data",
+                "Set to 1 to get coingame data about yourself", false);
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping optionMapping = event.getOption("data");
+        int getData;
+
+        if(optionMapping == null){
+            getData = 0;
+        }
+        else{
+            getData = optionMapping.getAsInt();
+        }
+
+        int optin = isOptedIn(event.getUser());
+
+        if(getData > 0){
+            if(optin == 0){
+                String out = "";
+                out += "Please consult /data to opt in or out of storing data.\n";
+                out += "For now, you've been automatically opted out.\n";
+                event.reply(out).queue();
+                return;
+            } else if(optin == -1){
+                event.reply("You're opted out, we cannot access data.").queue();
+                return;
+            }
+
+            Data d = Filehandler.getUserData(event.getUser());
 
             int PB = Integer.parseInt(d.getData("coin game - personal best"));
             int YearlyBest = Integer.parseInt(d.getData("coin game - yearly best"));
@@ -38,7 +73,16 @@ public class coingame extends CommandProcessor {
             out += "Your best score this year is " + YearlyBest + "\n";
             out += "Your best score this month is " + MonthlyBest + "\n";
             out += "Your best score today is " + DailyBest + "\n";
-            event.getChannel().sendMessage(out).queue();
+            event.reply(out).queue();
+            return;
+        }
+
+        String out = "";
+
+        if(optin == 0){
+            out += "Sorry to interrupt your coingame, but you haven't opted in or out of saving data.\n";
+            out += "For now, I'm automatically opting you out of saving data. Opt in using \"/data optin\"";
+            event.reply(out).queue();
             return;
         }
 
@@ -47,12 +91,11 @@ public class coingame extends CommandProcessor {
             // max is 2, min is 1
             heads++;
         }
-        // data stuff
-        String out = "";
 
-        if(isOptedIn(event.getAuthor(), event.getChannel())){
-            Data d = Filehandler.getUserData(event.getAuthor());
-            // coingame-last playe
+        // data stuff
+        if(optin == 1){
+            Data d = Filehandler.getUserData(event.getUser());
+            // coingame-last played
             Date lastGameDay = new Date(d.getData("coin game - last played day"));
             Date today = new Date();
 
@@ -70,6 +113,7 @@ public class coingame extends CommandProcessor {
             }
             else if(heads > PB){
                 out += "**__New Personal best!__** Previous best score: " + PB + " heads\n";
+                out += "See all your best scores with /coingame 1\n";
                 PB = heads;
                 YearlyBest = heads;
                 MonthlyBest = heads;
@@ -80,6 +124,7 @@ public class coingame extends CommandProcessor {
                     // same year
                     if(heads > YearlyBest){
                         out += "**Yearly PB!** Previous best score of the year: " + YearlyBest + " heads\n";
+                        out += "See all your best scores with /coingame 1\n";
                         YearlyBest = heads;
                         MonthlyBest = heads;
                         DailyBest = heads;
@@ -90,6 +135,7 @@ public class coingame extends CommandProcessor {
                             if(heads > MonthlyBest){
                                 // best score of the month
                                 out += "Best score of the month! Previous best score of the month: " + MonthlyBest + " heads\n";
+                                out += "See all your best scores with /coingame 1\n";
                                 MonthlyBest = heads;
                                 DailyBest = heads;
                             }
@@ -100,6 +146,7 @@ public class coingame extends CommandProcessor {
                                     if(heads > DailyBest){
                                         // best score of the day
                                         out += "Best score today! Previous best score today: " + DailyBest + " heads\n";
+                                        out += "See all your best scores with /coingame 1\n";
                                         DailyBest = heads;
                                     }
                                 }
@@ -134,18 +181,25 @@ public class coingame extends CommandProcessor {
         // winnings & telling user
         int winnings = fib(heads);
         if(heads >= 47){
-            event.getChannel().sendMessage(out + "You got 47 heads in a row. Or more. ***I'm not designed for that many heads in a row to happen.***").queue();
+            event.reply(out + "You got 47 heads in a row. Or more. ***I'm not designed for that many heads in a row to happen.***").queue();
             return;
         }
         winnings -= gamecost;
-        event.getChannel().sendMessage(out + "You got " + heads + " heads in a row, giving you a score of " + winnings).queue();
+        out += "You got " + heads + " heads in a row, giving you a score of " + winnings + "\n";
+        // zero heads is 1/2, one is 1/4, two is 1/8, three is 1/16, four is 1/32
+        // five is 1/64, six is 1/128, seven is 1/256, eight is 1/512, nine is 1/1024
+        if(heads >= 7 && optin == -1){
+            out += "Wow! Six heads is a 1/128 chance, and you got " + heads + " heads!\n";
+            out += "If you want me to save this data (next time), use /data optin.\n";
+        }
+        event.reply(out).queue();
     }
 
     private int fib(int heads){
         if(heads >= 47){
             return Integer.MAX_VALUE;
         }
-        if(heads == 0)
+        if(heads <= 0)
             return 0;
         if(fibNums[heads] == 0){
             if(heads == 1) {

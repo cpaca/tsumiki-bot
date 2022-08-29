@@ -2,15 +2,20 @@ package commands.AllServers;
 
 import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Map;
-import java.util.TreeMap;
+import java.security.KeyPair;
+import java.util.*;
 
 public class nekosdotlife extends CommandProcessor {
 
@@ -19,63 +24,93 @@ public class nekosdotlife extends CommandProcessor {
 
     public nekosdotlife(){
         cmd = "nekosdotlife";
-        help = "Run without parameters for help on how this works. This one is a **big one.**";
+        help = "Run /nekosdotlife help for help on this one. This is a VERY BIG one.";
         setCategory("images");
 
         cmds = getCmds();
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        if(message.length() == 0){
-            help(event);
-            return;
-        }
-        String type;
-        if(message.contains(" ")) {
-            type = message.substring(message.indexOf(" "));
-            message = message.substring(message.indexOf(" ") + 1);
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "parameter");
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        String subcomm;
+        if(option == null){
+            subcomm = "help";
         }
         else{
-            type = message;
-            message = "";
+            subcomm = option.getAsString();
         }
-        Boolean nsfw = cmds.get(type);
-        if(nsfw == null){
-            event.getChannel().sendMessage("Invalid type!").queue();
-            return;
+
+        if(subcomm.equals("help")){
+            String out = "The nekosdotlife command provides a lot of random images. " +
+                    "To get the nekos, do \"nekosdotlife neko\". " +
+                    "To get kemonomimi, do \"nekosdotlife kemonomimi\".\n" +
+                    "If you want a list of valid options, do \"/nekosdotlife list\".\n" +
+                    "Note: Some commands are marked NSFW, but this is VERY subjective.\n" +
+                    "I've been told some of the lewd ones are tame, and some of the tame ones are lewd. So, whatever.\n";
+            event.reply(out).queue();
         }
-        if(nsfw){
-            //ToS reasons.
-            event.getChannel().sendMessage("NSFW commands are off, after I caught wind of TOS problems!").queue();
-            return;
-        }
-        if(!event.getTextChannel().isNSFW()){
-            if(nsfw){
-                event.getChannel().sendMessage("Cannot use NSFW commands in SFW channel!").queue();
+        else if(subcomm.equals("list")){
+            OptionMapping commandOption = event.getOption("NSFW");
+            if(commandOption == null){
+                event.reply("NPE error, NDL command, tell the dev. Or just try again.").queue();
                 return;
             }
+            boolean isNSFW = commandOption.getAsBoolean();
+
+            if(isNSFW && !(event.getTextChannel().isNSFW()) ){
+                event.reply("Just for safety, I won't list the NSFW commands in a SFW channel.").queue();
+                return;
+            }
+
+            ArrayList<String> subcomms = new ArrayList<>();
+            for(Map.Entry<String, Boolean> entry : cmds.entrySet()){
+                if(entry.getValue() == isNSFW){
+                    subcomms.add(entry.getKey());
+                }
+            }
+
+            StringBuilder out = new StringBuilder("List of available commands:\n| ");
+            for(String s:subcomms){
+                out.append(s += " | ");
+            }
+            event.reply(out.toString()).queue();
         }
-        String imageURL = getImage(type);
-        if(imageURL.contains("<ERROR>")){
-            event.getChannel().sendMessage("An unknown error has occured. I have contacted the bot owner.").queue();
-            System.out.println("---------------------------");
-            System.out.println("NekosDotLife command error!");
-            System.out.println(imageURL);
-            System.out.println("NekosDotLife command error!");
-            System.out.println("---------------------------");
-            return;
+        else{
+            // "Custom" subcommand.
+            boolean NSFW = cmds.get(subcomm);
+
+            if(NSFW && !event.getTextChannel().isNSFW()){
+                event.reply("Cannot use NSFW subcommands in a SFW channel.").queue();
+                return;
+            }
+
+            String imageURL = getImage(subcomm);
+            if(imageURL.toUpperCase().contains("<ERROR>")){
+                event.reply("An unknown error has occured. I have contacted the bot owner. Try again?").queue();
+                System.out.println("---------------------------");
+                System.out.println("NekosDotLife command error!");
+                System.out.println(imageURL);
+                System.out.println("NekosDotLife command error!");
+                System.out.println("---------------------------");
+                return;
+            }
+            String desc = "URL: " + imageURL + "\n";
+            EmbedBuilder builder = buildImage(desc,imageURL);
+            event.replyEmbeds(builder.build()).queue();
         }
-        String desc = "URL: " + imageURL + "\n";
-        if(!nsfw) {
-            desc += "If the image is an NSFW one, please go contact the https://nekos.life owners that the link above is NSFW, despite being in a SFW section.";
-        }
-        EmbedBuilder builder = buildImage(desc,imageURL);
-        event.getChannel().sendMessageEmbeds(builder.build()).queue();
+
     }
 
     private Map<String,Boolean> getCmds(){
-        Map<String,Boolean> outputs = new TreeMap<>();
+        Map<String,Boolean> outputs = new HashMap<>();
         outputs.put("neko",false);
         outputs.put("hug",false);
 
@@ -83,27 +118,6 @@ public class nekosdotlife extends CommandProcessor {
         outputs.put("hololewd",true);
         outputs.put("holoero",true);
         return outputs;
-    }
-
-    private void help(MessageReceivedEvent event){
-        String out = "The nekosdotlife command provides a lot of random images. " +
-                "To get the nekos, do \"nekosdotlife neko\". " +
-                "To get kemonomimi, do \"nekosdotlife kemonomimi\".\n" +
-                "Warning, some are not immediately obvious. List of available parameters: \n" +
-                "(NSFW ones will not appear unless you are in an NSFW channel)\n | ";
-        boolean nsfw = event.getTextChannel().isNSFW();
-        for ( String cmd : cmds.keySet() ) {
-            if(cmds.get(cmd)) {
-                if (!nsfw)
-                    continue;
-            }
-            if(out.length() > 1000){
-                event.getChannel().sendMessage(out).queue();
-                out = "**Extended nekosdotlife parameters**: | ";
-            }
-            out += cmd + " | ";
-        }
-        event.getChannel().sendMessage(out).queue();
     }
 
     protected static String getImage(String url_){

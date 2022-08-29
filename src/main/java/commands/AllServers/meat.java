@@ -3,7 +3,9 @@ package commands.AllServers;
 import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.InteractionHook;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,11 +18,11 @@ public class meat extends CommandProcessor {
     }
 
     @Override
-    public void MessageReceived(String s, MessageReceivedEvent event){
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         EmbedBuilder meat = buildImage("","https://cdn.discordapp.com/attachments/626218261343764503/662321236654948372/meat.png");
         EmbedBuilder meow = buildImage("","https://cdn.discordapp.com/emojis/484904964985061376.gif?v=1");
-        Message msg = event.getChannel().sendMessageEmbeds(meat.build()).complete();
-        msg.editMessageEmbeds(meow.build()).queueAfter(5, TimeUnit.SECONDS);
+        InteractionHook msg = event.replyEmbeds(meat.build()).complete();
+        msg.editOriginalEmbeds(meow.build()).queueAfter(5, TimeUnit.SECONDS);
     }
 
 }

@@ -1,6 +1,7 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class id extends CommandProcessor {
@@ -12,8 +13,8 @@ public class id extends CommandProcessor {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        event.reply(
                 "DiscordID is an ID which discord automatically gives you upon account creation. \n" +
                         "Every account has a DiscordID. The biggest usage of DiscordID (that I know) \n" +
                         "is that if you put <@! before it and > after it (no spaces), you ping the user with that DiscordID. \n" +

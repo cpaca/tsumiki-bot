@@ -39,7 +39,7 @@ public class ThanosSnap extends CommandProcessor {
                 }
             });
             if(!valid.get()){
-                if(!isDeveloper(event)){
+                if(!isDeveloper(event.getAuthor())){
                     return;
                 }
             }

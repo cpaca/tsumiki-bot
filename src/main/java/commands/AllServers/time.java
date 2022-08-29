@@ -10,7 +10,7 @@ public class time extends CommandProcessor {
 
     public time(){
         cmd = "time";
-        help = "Tells you the time, in PST.";
+        help = "Tells you the time, in UTC.";
         setCategory("TextIO");
     }
 

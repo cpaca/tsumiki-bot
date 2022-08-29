@@ -1,6 +1,7 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class suckup extends CommandProcessor {
@@ -12,8 +13,8 @@ public class suckup extends CommandProcessor {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(":arrow_double_up: The last person to send a message sucks! :arrow_double_up:").queue();
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        event.reply(":arrow_double_up: The last person to send a message sucks! :arrow_double_up:").queue();
     }
 
 }

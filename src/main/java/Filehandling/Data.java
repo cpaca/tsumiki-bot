@@ -34,12 +34,19 @@ public class Data {
         return "0"; // default values.
     }
 
+    public Map<String, String> getAllData(){
+        return data;
+    }
+
     public void setData(String k, String v){
         // Do NOT have |'s in the key or value. They will not be loaded up properly.
         data.put(k, v);
     }
     public void setData(String k, int v){
         setData(k, Integer.toString(v));
+    }
+    public void setData(String k, long v){
+        setData(k, Long.toString(v));
     }
 
     public void wipeData(){

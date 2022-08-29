@@ -9,7 +9,7 @@ public class vote extends CommandProcessor {
 
     public vote(){
         cmd = "vote";
-        help = "Starts a vote, automatically assigns A, B, C, and D emojis to react to. Does not ping anyone (that is up to you to do)";
+        help = "Starts a vote and automatically assigns A, B, C, and D emojis to react to.";
         setCategory("TextIO");
     }
 

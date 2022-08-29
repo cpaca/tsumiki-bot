@@ -1,6 +1,7 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class suckdown extends CommandProcessor {
@@ -12,7 +13,7 @@ public class suckdown extends CommandProcessor {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(":arrow_double_down: The next person to send a message sucks! :arrow_double_down:").queue();
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        event.reply(":arrow_double_down: The next person to send a message sucks! :arrow_double_down:").queue();
     }
 }
