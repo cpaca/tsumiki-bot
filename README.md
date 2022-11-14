@@ -14,16 +14,16 @@ TODO:
 
 Write Bot V3, with:
 
---> Use SlashCommands, now that Discord is making Message Content a Priviledged Intent. (Priviliged? Priveledged? Priviliged? idk)
+~~--> Use SlashCommands, now that Discord is making Message Content a Priviledged Intent. (Priviliged? Priveledged? Priviliged? idk)~~
 
---> Fix /help so that it doesn't spam 100 messages.
+~~--> Fix /help so that it doesn't spam 100 messages.~~
 
---> Remove all CommandCores, they aren't necessary. Now that Slash Commands are a thing, I think it's easier to make each Command a CommandCore.
+~~--> Remove all CommandCores, they aren't necessary. Now that Slash Commands are a thing, I think it's easier to make each Command a CommandCore.~~
 
 --> cats!
 
 --> Update nekosdotlife command
 
---> Probably outright remove the !cats command
+~~--> Probably outright remove the !cats command~~
 
 --> Make contacting the owner significantly easier
