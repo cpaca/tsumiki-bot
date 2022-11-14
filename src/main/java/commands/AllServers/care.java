@@ -1,9 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class care extends Command {
+public class care extends CommandProcessor {
 
     public care(){
         cmd = "care";
@@ -12,7 +13,11 @@ public class care extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(mention(event.getMember()) + " cares.\nNow it's your turn to tell a lie!").queue();
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        if(event.getMember() == null){
+            event.reply("How did this error happen? Error #AS002").queue();
+            return;
+        }
+        event.reply(event.getMember().getUser().getAsMention() + " cares.\nNow it's your turn to tell a lie!").queue();
     }
 }

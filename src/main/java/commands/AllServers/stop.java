@@ -1,9 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class stop extends Command {
+public class stop extends CommandProcessor {
 
     private static final String STOP =
             "█████░█████░█████░████░░ \n" +
@@ -19,7 +20,7 @@ public class stop extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(STOP).queue();
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        event.reply(STOP).queue();
     }
 }

@@ -1,10 +1,11 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class grammar extends Command {
+public class grammar extends CommandProcessor {
 
     public grammar(){
         cmd = "grammar";
@@ -13,8 +14,8 @@ public class grammar extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         EmbedBuilder builder = buildImgur("And here, we have bad grammar.exe running.","9snc5WN.jpg");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.replyEmbeds(builder.build()).queue();
     }
 }

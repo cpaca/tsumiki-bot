@@ -1,10 +1,10 @@
 package commands.DraconiaServer;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class failuretoedit extends Command {
+public class failuretoedit extends CommandProcessor {
 
     public failuretoedit(){
         cmd = "failuretoedit";
@@ -17,8 +17,8 @@ public class failuretoedit extends Command {
         EmbedBuilder nested = buildImgur("Nested!","fcPfozw.png");
         EmbedBuilder doublenest = buildImgur("Double Nested!","mIloho5.png");
         EmbedBuilder failure = buildImgur("FAIL.","KclcO0t.png");
-        event.getChannel().sendMessage(nested.build()).queue();
-        event.getChannel().sendMessage(doublenest.build()).queue();
-        event.getChannel().sendMessage(failure.build()).queue();
+        event.getChannel().sendMessageEmbeds(nested.build()).queue();
+        event.getChannel().sendMessageEmbeds(doublenest.build()).queue();
+        event.getChannel().sendMessageEmbeds(failure.build()).queue();
     }
 }

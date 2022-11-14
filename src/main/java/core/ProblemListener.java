@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ProblemListener extends Command {
+public abstract class ProblemListener extends CommandProcessor {
 
     public ProblemListener(){
         AddProblems();

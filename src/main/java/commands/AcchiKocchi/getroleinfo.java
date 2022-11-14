@@ -1,12 +1,13 @@
 package commands.AcchiKocchi;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class getroleinfo extends Command {
+public class getroleinfo extends CommandProcessor {
 
     static final Map<String,String> map = new LinkedHashMap<>();
 
@@ -23,10 +24,11 @@ public class getroleinfo extends Command {
         cmd = "getroleinfo";
         help = "Get info on roles accessible for free";
         setCategory("Acchi Kocchi");
+        guild = 413108124556328980L;
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         StringBuilder out = new StringBuilder();
         for(String s:map.keySet()){
             s = s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
@@ -41,6 +43,6 @@ public class getroleinfo extends Command {
                 "For example: Doing \"!role add Tsumiki\" gives you the Tsumiki role.\n" +
                 "**List of valid roles, contained within []'s:**\n" +
                 out.toString();
-        event.getChannel().sendMessage(send).queue();
+        event.reply(send).queue();
     }
 }

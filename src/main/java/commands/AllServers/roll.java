@@ -1,13 +1,17 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.*;
 
-public class roll extends Command {
+public class roll extends CommandProcessor {
 
     private static final String sortString = "sorted";
     private static final String compactsorted = "compactsorted";
@@ -22,9 +26,7 @@ public class roll extends Command {
 
     public roll(){
         cmd = "roll";
-        help = "Rolls dice. \"roll AdB\" will roll A copies of B-sided dice. \"roll AdB,CdD\" will roll A copies of B-sided dice, then C copies of D-sided dice.\n" +
-                "put \"sorted\" before the dice to sort the dice to have sorted output.\n" +
-                "put \"compactsorted\" (or \"cs\") for the same effect, but more compact.";
+        help = "Rolls dice. Do \"/roll help\" for more detailed information.";
         setCategory("TextIO");
     }
 
@@ -40,25 +42,44 @@ public class roll extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        message = message.toLowerCase();
-        User u = event.getAuthor();
-        String mention = u.getAsMention();
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "dice to roll");
 
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        if(option == null){
+            event.reply("How did this error happen?").queue();
+            return;
+        }
+        String text = option.getAsString();
+
+        if(text.equals("help")){
+            String out = "Rolls dice. \"roll AdB\" will roll A copies of B-sided dice. \"roll AdB,CdD\" will roll A copies of B-sided dice, then C copies of D-sided dice.\n" +
+                    "put \"sorted\" before the dice to sort the dice to have sorted output.\n" +
+                    "put \"compactsorted\" (or \"cs\") for the same effect, but more compact.";
+            event.reply(out).queue();
+            return;
+        }
+
+        text = text.toLowerCase();
         boolean sorted = false;
         String sortedtext = " copy(ies) of ";
-        message = message.replace(" ","");
-        if(message.startsWith(sortString)){
-            message = message.substring(sortString.length());
+        text = text.replace(" ","");
+        if(text.startsWith(sortString)){
+            text = text.substring(sortString.length());
             sorted = true;
         }
-        if(message.startsWith(compactsorted)){
-            message = message.substring(compactsorted.length());
+        if(text.startsWith(compactsorted)){
+            text = text.substring(compactsorted.length());
             sorted = true;
             sortedtext = " x ";
         }
-        if(message.startsWith(compactsorted2)){
-            message = message.substring(compactsorted2.length());
+        if(text.startsWith(compactsorted2)){
+            text = text.substring(compactsorted2.length());
             sorted = true;
             sortedtext = " x ";
         }
@@ -66,14 +87,14 @@ public class roll extends Command {
         int numdice = 0;
         int numsides = 0;
         boolean countingNumDice = true;
-        for(char letter : message.toCharArray()){
+        for(char letter : text.toCharArray()){
             int num = Character.getNumericValue(letter);
             if(num >= 0 && num < 10){
                 if(countingNumDice){
                     numdice *= 10;
                     numdice += num;
                     if(numdice > MaxDiceRollable){
-                        event.getChannel().sendMessage("You might hurt yourself rolling that many dice!").queue();
+                        event.reply("You might hurt yourself rolling that many dice!").queue();
                         return;
                     }
                 }
@@ -81,7 +102,7 @@ public class roll extends Command {
                     numsides *= 10;
                     numsides += num;
                     if(numsides > MaxDiceSides){
-                        event.getChannel().sendMessage("Rolling a dice with that many sides is like rolling a ball!").queue();
+                        event.reply("Rolling a dice with that many sides is like rolling a ball!").queue();
                         return;
                     }
                 }
@@ -94,7 +115,7 @@ public class roll extends Command {
                 if (countingNumDice) {
                     countingNumDice = false;
                 } else {
-                    event.getChannel().sendMessage("Invalid dice expression!").queue();
+                    event.reply("Invalid dice expression!").queue();
                     return;
                 }
             } else if (letter == ',') {
@@ -102,7 +123,7 @@ public class roll extends Command {
                     numdice = 1;
                 }
                 if(numsides == 0){
-                    event.getChannel().sendMessage("Invalid dice expression!").queue();
+                    event.reply("Invalid dice expression!").queue();
                     return;
                 }
                 countingNumDice = true;
@@ -113,7 +134,7 @@ public class roll extends Command {
             } else if (letter == ' ') {
                 //ignore
             } else {
-                event.getChannel().sendMessage("Invalid dice expresion!").queue();
+                event.reply("Invalid dice expresion!").queue();
                 return;
             }
 
@@ -121,7 +142,7 @@ public class roll extends Command {
 
         if(numdice != 0) {
             if(numsides == 0){
-                event.getChannel().sendMessage("Invalid dice expression!").queue();
+                event.reply("Invalid dice expression!").queue();
                 return;
             }
             // dicenum = true;
@@ -138,19 +159,19 @@ public class roll extends Command {
 
         if(sorted){
             if(totaldice > MaxDiceSorted){
-                event.getChannel().sendMessage("You might hurt yourself rolling that many dice!").queue();
+                event.reply("You might hurt yourself rolling that many dice!").queue();
                 return;
             }
         }
         else{
             if(totaldice > MaxDiceUnsorted){
-                event.getChannel().sendMessage("You might hurt yourself rolling that many dice!").queue();
+                event.reply("You might hurt yourself rolling that many dice!").queue();
                 return;
             }
         }
 
         if(totaldice == 0){
-            event.getChannel().sendMessage("Invalid Dice Expression!").queue();
+            event.reply("Invalid Dice Expression!").queue();
             return;
         }
 
@@ -160,11 +181,11 @@ public class roll extends Command {
             dice.forEach(d -> d.rollsorted(rolls));
 
             long total = 0;
-            StringBuilder out = new StringBuilder(mention + " **Rolled:** | ");
+            StringBuilder out = new StringBuilder(event.getUser().getAsMention() + " **Rolled:** | ");
             for ( Integer roll : rolls.keySet() ) {
                 if(out.length() > 1000){
-                    event.getChannel().sendMessage(out).queue();
-                    out = new StringBuilder(mention + " **Also rolled:** | ");
+                    event.reply(out.toString()).queue();
+                    out = new StringBuilder(event.getUser().getAsMention() + " **Also rolled:** | ");
                 }
                 out.append(rolls.get(roll));
                 out.append(sortedtext);
@@ -174,23 +195,23 @@ public class roll extends Command {
             }
             out.append(" **Sum of all rolls:** ");
             out.append(total);
-            event.getChannel().sendMessage(out).queue();
+            event.reply(out.toString()).queue();
         }
         else{
             List<Integer> rolls = new ArrayList<>();
 
             dice.forEach(d -> d.roll(rolls));
 
-            StringBuilder out = new StringBuilder(mention + " **Rolled:** | ");
+            StringBuilder out = new StringBuilder(event.getUser().getAsMention() + " **Rolled:** | ");
             for(int roll:rolls){
                 if(out.length() > 1000){
-                    event.getChannel().sendMessage(out).queue();
-                    out = new StringBuilder(mention + " **Also rolled:** | ");
+                    event.reply(out.toString()).queue();
+                    out = new StringBuilder(event.getUser().getAsMention() + " **Also rolled:** | ");
                 }
                 out.append(roll);
                 out.append(" | ");
             }
-            event.getChannel().sendMessage(out).queue();
+            event.reply(out.toString()).queue();
         }
     }
 

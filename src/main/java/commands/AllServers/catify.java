@@ -1,12 +1,16 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public class catify extends Command {
+public class catify extends CommandProcessor {
 
     private ArrayList<Catifier> catifiers = new ArrayList<>();
     private static String letters = "";
@@ -60,11 +64,24 @@ public class catify extends Command {
     }
 
     @Override
-    protected void MessageReceived(@Nonnull String message, MessageReceivedEvent event) {
-        String str = catifyString(message);
-        if(str.equals(""))
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "text to nekoify");
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        if(option == null){
+            // shouldn't happen, but
+            event.reply("How did this error happen? Error code #AS003").queue();
             return;
-        event.getChannel().sendMessage(str).queue();
+        }
+        String text = option.getAsString();
+
+        String catified = catifyString(text);
+        event.reply(catified).queue();
     }
 
     @Nonnull

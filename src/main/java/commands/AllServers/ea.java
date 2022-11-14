@@ -1,10 +1,11 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class ea extends Command {
+public class ea extends CommandProcessor {
 
     public ea(){
         cmd = "ea";
@@ -13,8 +14,8 @@ public class ea extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         EmbedBuilder builder = buildImgur("And here, this is EA in a nutshell.","hseH4nl.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.replyEmbeds(builder.build()).queue();
     }
 }

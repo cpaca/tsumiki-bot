@@ -1,10 +1,11 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class netneutrality extends Command {
+public class netneutrality extends CommandProcessor {
 
     public netneutrality(){
         cmd = "netneutrality";
@@ -13,8 +14,8 @@ public class netneutrality extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         EmbedBuilder builder = buildImgur("NET NEUTRALITY HAS DIED. To continue reading this message, please pay $5.","fjChkf0.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.replyEmbeds(builder.build()).queue();
     }
 }

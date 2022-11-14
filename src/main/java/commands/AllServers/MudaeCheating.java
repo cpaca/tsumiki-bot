@@ -1,11 +1,11 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class MudaeCheating extends Command {
+public class MudaeCheating extends CommandProcessor {
 
     public MudaeCheating(){
         // passive

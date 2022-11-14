@@ -1,12 +1,17 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class blackboardBold extends Command {
+public class blackboardBold extends CommandProcessor {
 
     // apparantly the blackboard boldface versions count as 2 characters
     Map<String, String> transformations = new HashMap<>();
@@ -52,17 +57,35 @@ public class blackboardBold extends Command {
         /*
         transformations.forEach((f,t) -> System.out.println("" + f + " " + t));
         //*/
+
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        if(message.length() == 0){
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "blackboard bold-ify");
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        if(option == null){
+            // shouldn't happen, but
+            event.reply("How did this error happen? Error code #AS001").queue();
             return;
         }
-        final String[] data = new String[] {message};
-        // big brain!
+        String text = option.getAsString();
+
+        final String[] data = new String[] {text};
+        // big brain! <--- Probably 2018 me.
+        //
+        // Next, 2022 me:
+        // What the fuck was I doing?
+        // Oh, the data here needs to be final or effectively final. I see.
+        // This certainly is the big brain way to do it.
         transformations.forEach((f, t) -> data[0] = data[0].replace(f,t));
 
-        event.getChannel().sendMessage(data[0]).queue();
+        event.reply(data[0]).queue();
     }
 }

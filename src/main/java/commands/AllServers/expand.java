@@ -1,9 +1,13 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
-public class expand extends Command {
+public class expand extends CommandProcessor {
 
     public expand(){
         cmd = "expand";
@@ -12,11 +16,26 @@ public class expand extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        if(message.length() == 0)
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "text to E X P A N D");
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        if(option == null){
+            // shouldn't happen, but
+            event.reply("How did this error happen? Error code #AS001").queue();
+            return;
+        }
+        String text = option.getAsString();
+
+        if(text.length() == 0)
             return;
         StringBuilder out = new StringBuilder();
-        for(char c:message.toCharArray()){
+        for(char c:text.toCharArray()){
             out.append(c);
             out.append(" ");
         }
@@ -24,6 +43,6 @@ public class expand extends Command {
             event.getChannel().sendMessage("Message too l o n g!").queue();
             return;
         }
-        event.getChannel().sendMessage(out.toString()).queue();
+        event.reply(out.toString()).queue();
     }
 }

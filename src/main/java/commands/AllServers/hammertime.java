@@ -1,9 +1,10 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class hammertime extends Command {
+public class hammertime extends CommandProcessor {
 
     private static final String hammertime =
             "" +
@@ -20,7 +21,7 @@ public class hammertime extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
-        event.getChannel().sendMessage(hammertime).queue();
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        event.reply(hammertime).queue();
     }
 }

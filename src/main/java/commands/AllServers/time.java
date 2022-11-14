@@ -1,16 +1,16 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class time extends Command {
+public class time extends CommandProcessor {
 
     public time(){
         cmd = "time";
-        help = "Tells you the time, in PST.";
+        help = "Tells you the time, in UTC.";
         setCategory("TextIO");
     }
 
@@ -25,10 +25,10 @@ public class time extends Command {
         String month = getMonth(c.get(Calendar.MONTH));
         String year = "" + c.get(Calendar.YEAR);
 
-        second = adjustString(second,2,"0");
-        minute = adjustString(minute,2,"0");
-        hour = adjustString(hour,2,"0");
-        day = adjustString(day,2,"0");
+        second = leftPad(second,2,"0");
+        minute = leftPad(minute,2,"0");
+        hour = leftPad(hour,2,"0");
+        day = leftPad(day,2,"0");
 
         String msg = "It is " + date + ", " + month + " " + day + ", " + year + ", and the time is " + hour + ":" + minute + ":" + second + " in the UTC timezone.";
         event.getChannel().sendMessage(msg).queue();

@@ -1,10 +1,9 @@
 package commands.DraconiaServer;
 
-import ListenerV2.DraconiaListenerV2;
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class designate extends Command {
+public class designate extends CommandProcessor {
 
     public designate(){
         cmd = "designate";
@@ -14,6 +13,6 @@ public class designate extends Command {
 
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
-        DraconiaListenerV2.Registered = event.getChannel();
+
     }
 }

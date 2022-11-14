@@ -1,10 +1,10 @@
 package commands.DraconiaServer;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class jaionlucioisbullshit extends Command {
+public class jaionlucioisbullshit extends CommandProcessor {
 
     public jaionlucioisbullshit(){
         cmd = "jaionlucioisbullshit";
@@ -15,6 +15,6 @@ public class jaionlucioisbullshit extends Command {
     @Override
     protected void MessageReceived(String message, MessageReceivedEvent event) {
         EmbedBuilder builder = buildImgur("Jai on lucio is utter bullshit.","3Rdkjwb.gif");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.getChannel().sendMessageEmbeds(builder.build()).queue();
     }
 }

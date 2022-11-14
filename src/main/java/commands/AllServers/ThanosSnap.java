@@ -1,6 +1,6 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -8,7 +8,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ThanosSnap extends Command {
+public class ThanosSnap extends CommandProcessor {
 
     public ThanosSnap(){
         //passive function
@@ -27,7 +27,7 @@ public class ThanosSnap extends Command {
             GuildVoiceState gvs = m.getVoiceState();
             if(gvs == null)
                 return;
-            VoiceChannel channel = gvs.getChannel();
+            AudioChannel channel = gvs.getChannel();
             if(channel == null)
                 return;
 
@@ -39,7 +39,7 @@ public class ThanosSnap extends Command {
                 }
             });
             if(!valid.get()){
-                if(!isDeveloper(event)){
+                if(!isDeveloper(event.getAuthor())){
                     return;
                 }
             }

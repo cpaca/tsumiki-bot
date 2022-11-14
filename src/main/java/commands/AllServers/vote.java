@@ -1,15 +1,15 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class vote extends Command {
+public class vote extends CommandProcessor {
     static final String message = "Vote on option A,B,C, or D here!";
 
     public vote(){
         cmd = "vote";
-        help = "Starts a vote, automatically assigns A, B, C, and D emojis to react to. Does not ping anyone (that is up to you to do)";
+        help = "Starts a vote and automatically assigns A, B, C, and D emojis to react to.";
         setCategory("TextIO");
     }
 

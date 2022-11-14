@@ -1,10 +1,14 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import core.Main;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
-public class degrammar extends Command {
+public class degrammar extends CommandProcessor {
 
     public degrammar(){
         cmd = "degrammar";
@@ -13,10 +17,25 @@ public class degrammar extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+        data.addOption(OptionType.STRING,"text", "text to ungrammar");
+
+        return super.UpdateCommandData(data);
+    }
+
+    @Override
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+        OptionMapping option = event.getOption("text");
+        if(option == null){
+            // shouldn't happen, but
+            event.reply("How did this error happen? Error code #AS001").queue();
+            return;
+        }
+        String text = option.getAsString();
+
         StringBuilder out = new StringBuilder();
         boolean first = true;
-        for(String word : message.split(" ")) {
+        for(String word : text.split(" ")) {
             if(first){
                 first = false;
             }

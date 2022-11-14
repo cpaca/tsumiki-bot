@@ -1,10 +1,11 @@
 package commands.AllServers;
 
-import core.Command;
+import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class australianserver extends Command {
+public class australianserver extends CommandProcessor {
 
     public australianserver(){
         cmd = "australianserver";
@@ -13,8 +14,8 @@ public class australianserver extends Command {
     }
 
     @Override
-    protected void MessageReceived(String message, MessageReceivedEvent event) {
+    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
         EmbedBuilder builder = buildImgur("sOrRy,tHiS iS aN aUsTrAlIaN sErVeR sO yOu DiDn'T sWeAr EnOuGh","L1BPVUT.png");
-        event.getChannel().sendMessage(builder.build()).queue();
+        event.replyEmbeds(builder.build()).queue();
     }
 }
