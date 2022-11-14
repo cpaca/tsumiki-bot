@@ -46,13 +46,14 @@ public class storeData extends CommandProcessor {
         String out = "";
 
         Data data = Filehandler.getUserData(event.getUser());
-        System.out.println(data.getData("optin"));
+        //System.out.println(data.getData("optin"));
 
         if(subcommand.equals("optin")){
             data.setData("optin", "true");
 
             out += "Opting you in to data collection.";
             event.reply(out).queue();
+            Filehandler.saveData(data);
         } else if(subcommand.equals("optout")){
             data.setData("optin", "false");
 
@@ -113,16 +114,16 @@ public class storeData extends CommandProcessor {
             } else{
                 event.reply(out).queue();
             }
-        } else{
+        } else {
             // either Help
             // or just... idk
-            String optin = "optin - Opts in to having data stored. Needed for things like wordle and coingame.\n";
-            String optout = "optout - Opts out to having data stored. Can't use coingame if you do this.\n";
-            String wipe = "wipe - Wipes all of your data. Non recoverable.\n";
+            String optin = "``/data optin`` - Opts in to having data stored. Needed for things like wordle and coingame.\n";
+            String optout = "``/data optout`` - Opts out to having data stored. Can't use coingame if you do this.\n";
+            String wipe = "``/data wipe`` - Wipes all of your data. Non recoverable.\n";
 
-            String help = "help - sends this message\n";
-            String priv = "priv - Sends the privacy policy for this bot. Discord doesn't like it if I don't have this.\n";
-            String down = "down - Downloads all of your data, then sends it in a message. \n";
+            String help = "``/data help`` - sends this message\n";
+            String priv = "``/data priv`` - Sends the privacy policy for this bot. Discord doesn't like it if I don't have this.\n";
+            String down = "``/data down`` - Downloads all of your data, then sends it in a message. \n";
             event.reply(optin + optout + wipe + help + priv + down).queue();
         }
     }
