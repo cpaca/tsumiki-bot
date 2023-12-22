@@ -59,7 +59,7 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     // but it doesn't exist anymore, and checking DV8FromTheWorld/JDA #1971 it was renamed
     // to SlashCommandInteractionEvent
     @Override
-    public void onSlashCommandInteraction(SlashCommandEvent event){
+    public void onSlashCommand(SlashCommandEvent event){
         String name = event.getName();
         if(name.equals(this.getCmd())){
             ProcessSlashCommand(event);
