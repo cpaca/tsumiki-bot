@@ -43,9 +43,9 @@
             <version>LATEST</version>
         </dependency>
         <dependency>
-            <groupId>net.dv8tion</groupId>
+            <groupId>com.github.discord-jda</groupId>
             <artifactId>JDA</artifactId>
-            <version>LATEST</version>
+            <version>v4.4.0</version>
         </dependency>
         <dependency>
             <groupId>com.sedmelluq</groupId>
