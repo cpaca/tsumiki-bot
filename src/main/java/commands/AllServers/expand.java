@@ -4,7 +4,7 @@ import core.CommandProcessor;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class expand extends CommandProcessor {
 
@@ -15,7 +15,7 @@ public class expand extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         data.addOption(OptionType.STRING,"text", "text to E X P A N D");
 
         return super.UpdateCommandData(data);

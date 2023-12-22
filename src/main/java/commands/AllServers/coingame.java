@@ -8,7 +8,7 @@ import core.Main;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class coingame extends CommandProcessor {
 
@@ -26,7 +26,7 @@ public class coingame extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         data.addOption(OptionType.INTEGER, "data",
                 "Set to 1 to get coingame data about yourself", false);
 

@@ -8,7 +8,7 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions {
 
@@ -72,20 +72,20 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     }
 
     // Get this command's CommandData
-    public CommandDataImpl getCommandData(){
+    public CommandData getCommandData(){
         if(getCmd().equals("")){
             return null;
         }
         if(getDesc().equals("")){
             return null;
         }
-        CommandDataImpl out = new CommandDataImpl(getCmd(), getDesc());
+        CommandData out = new CommandData(getCmd(), getDesc());
         out = UpdateCommandData(out);
         return out;
     }
 
     // In case the command wants to do something EX add options
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data){
+    protected CommandData UpdateCommandData(CommandData data){
         return data;
     }
 

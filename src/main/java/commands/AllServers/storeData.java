@@ -6,8 +6,8 @@ import core.CommandProcessor;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.*;
 
@@ -20,7 +20,7 @@ public class storeData extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         SubcommandData optin = new SubcommandData("optin", "Opts in to having data stored");
         SubcommandData optout = new SubcommandData("optout", "Opts out to having data stored");
         SubcommandData wipe = new SubcommandData("wipe", "Wipes all your data. WARNING: THIS CANNOT BE UNDONE");

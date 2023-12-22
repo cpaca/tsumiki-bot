@@ -2,7 +2,6 @@ package commands.AllServers;
 
 import core.CommandProcessor;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 public class selfShutdown extends CommandProcessor {
 
