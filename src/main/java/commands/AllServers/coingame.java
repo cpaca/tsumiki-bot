@@ -36,13 +36,13 @@ public class coingame extends CommandProcessor {
     @Override
     protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping optionMapping = event.getOption("data");
-        int getData;
+        long getData;
 
         if(optionMapping == null){
             getData = 0;
         }
         else{
-            getData = optionMapping.getAsInt();
+            getData = optionMapping.getAsLong();
         }
 
         int optin = isOptedIn(event.getUser());
