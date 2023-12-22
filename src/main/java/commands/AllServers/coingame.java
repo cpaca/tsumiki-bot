@@ -5,11 +5,9 @@ import Filehandling.Date;
 import Filehandling.Filehandler;
 import core.CommandProcessor;
 import core.Main;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 public class coingame extends CommandProcessor {
@@ -36,7 +34,7 @@ public class coingame extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping optionMapping = event.getOption("data");
         int getData;
 

@@ -2,8 +2,7 @@ package commands.AllServers;
 
 import core.CommandProcessor;
 import core.Main;
-import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -49,7 +48,7 @@ public class roll extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping option = event.getOption("text");
         if(option == null){
             event.reply("How did this error happen?").queue();

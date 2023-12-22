@@ -4,13 +4,11 @@ import Filehandling.Data;
 import Filehandling.Filehandler;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
-import net.dv8tion.jda.api.events.ReadyEvent;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
-
-import javax.annotation.Nonnull;
 
 public abstract class CommandProcessor extends ListenerAdapter implements MessageFunctions {
 
@@ -61,7 +59,7 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     // but it doesn't exist anymore, and checking DV8FromTheWorld/JDA #1971 it was renamed
     // to SlashCommandInteractionEvent
     @Override
-    public void onSlashCommandInteraction(SlashCommandInteractionEvent event){
+    public void onSlashCommandInteraction(SlashCommandEvent event){
         String name = event.getName();
         if(name.equals(this.getCmd())){
             ProcessSlashCommand(event);
@@ -69,7 +67,7 @@ public abstract class CommandProcessor extends ListenerAdapter implements Messag
     }
 
     // By default, do nothing.
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event){
+    protected void ProcessSlashCommand(SlashCommandEvent event){
 
     }
 

@@ -3,8 +3,7 @@ package commands.AllServers;
 import Filehandling.Data;
 import Filehandling.Filehandler;
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
@@ -37,7 +36,7 @@ public class storeData extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event){
+    protected void ProcessSlashCommand(SlashCommandEvent event){
         String subcommand = event.getSubcommandName();
         if(subcommand == null){
             subcommand = "help";
