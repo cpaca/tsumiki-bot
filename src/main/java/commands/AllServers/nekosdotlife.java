@@ -2,19 +2,16 @@ package commands.AllServers;
 
 import core.CommandProcessor;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.security.KeyPair;
 import java.util.*;
 
 public class nekosdotlife extends CommandProcessor {
@@ -31,14 +28,14 @@ public class nekosdotlife extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         data.addOption(OptionType.STRING,"text", "parameter");
 
         return super.UpdateCommandData(data);
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping option = event.getOption("text");
         String subcomm;
         if(option == null){

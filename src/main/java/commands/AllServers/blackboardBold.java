@@ -1,12 +1,11 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,14 +60,14 @@ public class blackboardBold extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         data.addOption(OptionType.STRING,"text", "blackboard bold-ify");
 
         return super.UpdateCommandData(data);
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping option = event.getOption("text");
         if(option == null){
             // shouldn't happen, but

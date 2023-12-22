@@ -3,11 +3,12 @@ package commands.AcchiKocchi;
 import core.CommandProcessor;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import net.dv8tion.jda.api.entities.Guild;
 
 public class role extends CommandProcessor {
@@ -20,7 +21,7 @@ public class role extends CommandProcessor {
     }
 
     @Override
-    public CommandDataImpl UpdateCommandData(CommandDataImpl data){
+    public CommandData UpdateCommandData(CommandData data){
         SubcommandData add = new SubcommandData("add", "Add a role to yourself")
                 .addOption(OptionType.STRING, "target", "The role to add to yourself", true);
         SubcommandData remove = new SubcommandData("remove", "Remove a role from yourself")
@@ -31,7 +32,7 @@ public class role extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         String subcommand = event.getSubcommandName();
         OptionMapping commandOption = event.getOption("target");
 

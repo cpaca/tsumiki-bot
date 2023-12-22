@@ -1,8 +1,7 @@
 package commands.AcchiKocchi;
 
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,7 +27,7 @@ public class getroleinfo extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         StringBuilder out = new StringBuilder();
         for(String s:map.keySet()){
             s = s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();

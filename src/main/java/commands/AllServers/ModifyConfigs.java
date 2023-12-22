@@ -3,10 +3,11 @@ package commands.AllServers;
 import Filehandling.Data;
 import Filehandling.Filehandler;
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 public class ModifyConfigs extends CommandProcessor {
 
@@ -17,7 +18,7 @@ public class ModifyConfigs extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         SubcommandData activate = new SubcommandData("activate", "Activate developer mode");
         SubcommandData deactivate = new SubcommandData("deactivate", "Deactivate developer mode");
 
@@ -27,7 +28,7 @@ public class ModifyConfigs extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         if(event.getUser().getIdLong() == 205011703891623936L){
             String subcomm = event.getSubcommandName();
             Data c = Filehandler.getConfig("developer");

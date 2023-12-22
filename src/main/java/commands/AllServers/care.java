@@ -1,8 +1,8 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 
 public class care extends CommandProcessor {
 
@@ -13,7 +13,7 @@ public class care extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         if(event.getMember() == null){
             event.reply("How did this error happen? Error #AS002").queue();
             return;

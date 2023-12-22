@@ -3,12 +3,11 @@ package commands.AllServers;
 import Filehandling.Data;
 import Filehandling.Filehandler;
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.*;
 
@@ -21,7 +20,7 @@ public class storeData extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         SubcommandData optin = new SubcommandData("optin", "Opts in to having data stored");
         SubcommandData optout = new SubcommandData("optout", "Opts out to having data stored");
         SubcommandData wipe = new SubcommandData("wipe", "Wipes all your data. WARNING: THIS CANNOT BE UNDONE");
@@ -37,7 +36,7 @@ public class storeData extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event){
+    protected void ProcessSlashCommand(SlashCommandEvent event){
         String subcommand = event.getSubcommandName();
         if(subcommand == null){
             subcommand = "help";
@@ -80,19 +79,18 @@ public class storeData extends CommandProcessor {
             out += "Privacy policy:\n";
             out += "Data we collect is available to anyone who is able to hack into our servers\n";
             out += "and also available to anyone who hacks into your account and does /data down\n";
-            out += "and also available to anyone who bribes the bot dev with money\n";
             out += "and also to whoever looks in the server's files\n";
-            out += "Basically, this is a bot made by one guy. Don't trust its data privacy to be that good.\n";
+            out += "Basically, this is a bot made by one person. Don't trust its data privacy to be that good.\n";
             event.reply(out).queue();
         } else if(subcommand.equals("down")){
             OptionMapping option = event.getOption("page");
-            int page = 1;
+            long page = 1;
             if(option != null){
-                page = option.getAsInt();
+                page = option.getAsLong();
             }
 
-            int minIndex = (page-1)*10;
-            int maxIndex = (page)*10;
+            long minIndex = (page-1)*10;
+            long maxIndex = (page)*10;
 
             Map<String, String> allData = data.getAllData();
             List<String> keys = new ArrayList<>(allData.keySet());

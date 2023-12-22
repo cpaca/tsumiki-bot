@@ -1,11 +1,11 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -64,14 +64,14 @@ public class catify extends CommandProcessor {
     }
 
     @Override
-    protected CommandDataImpl UpdateCommandData(CommandDataImpl data) {
+    protected CommandData UpdateCommandData(CommandData data) {
         data.addOption(OptionType.STRING,"text", "text to nekoify");
 
         return super.UpdateCommandData(data);
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         OptionMapping option = event.getOption("text");
         if(option == null){
             // shouldn't happen, but

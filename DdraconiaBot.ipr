@@ -5,49 +5,49 @@
       <output-path>$PROJECT_DIR$/out/artifacts/DdraconiaBot_jar</output-path>
       <root id="archive" name="DdraconiaBot.jar">
         <element id="module-output" name="DdraconiaBot" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.1/annotations-16.0.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/dv8tion/JDA/4.1.1_127/JDA-4.1.1_127.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.12.1/jsoup-1.12.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.10/commons-lang3-3.10.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/fr/bmartel/http-endec/1.04/http-endec-1.04.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.8-dmr/mysql-connector-java-8.0.8-dmr.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.0.4/opus-java-api-1.0.4.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/iharder/base64/2.3.9/base64-2.3.9.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/brunocvcunha/jiphy/jiphy/1.0/jiphy-1.0.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.5.6/slf4j-log4j12-1.5.6.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer-natives/1.3.13/lavaplayer-natives-1.3.13.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/fr/bmartel/jspeedtest/1.32.1/jspeedtest-1.32.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/neovisionaries/nv-websocket-client/2.9/nv-websocket-client-2.9.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.0.4/opus-java-natives-1.0.4.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.1/httpasyncclient-4.1.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/eu/medsea/mimeutil/mime-util/2.1.3/mime-util-2.1.3.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.43/lavaplayer-1.3.43.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lava-common/1.1.0/lava-common-1.1.0.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/brunocvcunha/jiphy/jiphy/1.0/jiphy-1.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.5.6/slf4j-log4j12-1.5.6.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.13.0/okhttp-3.13.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.73/lavaplayer-1.3.73.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/fr/bmartel/jspeedtest/1.32.1/jspeedtest-1.32.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/discord-jda/JDA/v4.4.0/JDA-v4.4.0.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/brunocvcunha/inutils4j/inutils4j/0.4/inutils4j-0.4.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.1/annotations-16.0.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.12.1/jsoup-1.12.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer-natives/1.3.13/lavaplayer-natives-1.3.13.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/fr/bmartel/http-endec/1.04/http-endec-1.04.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sedmelluq/lava-common/1.1.2/lava-common-1.1.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.1/httpasyncclient-4.1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/iharder/base64/2.3.9/base64-2.3.9.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.8-dmr/mysql-connector-java-8.0.8-dmr.jar" path-in-jar="/" />
       </root>
     </artifact>
   </component>
@@ -78,6 +78,7 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="GradleUISettings">
     <setting name="root" />
   </component>
@@ -100,6 +101,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -227,10 +229,15 @@
       <module fileurl="file://$PROJECT_DIR$/DdraconiaBot.iml" filepath="$PROJECT_DIR$/DdraconiaBot.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11.0.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11.0.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="jcenter" />
+      <option name="name" value="JCenter" />
+      <option name="url" value="https://jcenter.bintray.com" />
+    </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
@@ -240,11 +247,6 @@
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="jcenter" />
-      <option name="name" value="JCenter" />
-      <option name="url" value="https://jcenter.bintray.com" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="jitpack.io" />
@@ -261,43 +263,35 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Maven: club.minnced:opus-java-api:1.1.1">
+    <library name="Maven: club.minnced:opus-java-api:1.1.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="club.minnced" artifactId="opus-java-api" version="1.1.0" />
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.1/opus-java-api-1.1.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.1/opus-java-api-1.1.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.1/opus-java-api-1.1.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-api/1.1.0/opus-java-api-1.1.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: club.minnced:opus-java-natives:1.1.1">
+    <library name="Maven: club.minnced:opus-java-natives:1.1.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="club.minnced" artifactId="opus-java-natives" version="1.1.0" />
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.1/opus-java-natives-1.1.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.1/opus-java-natives-1.1.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.1/opus-java-natives-1.1.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java-natives/1.1.0/opus-java-natives-1.1.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: club.minnced:opus-java:1.1.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java/1.1.1/opus-java-1.1.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java/1.1.1/opus-java-1.1.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/club/minnced/opus-java/1.1.1/opus-java-1.1.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.1">
+    <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-annotations" version="2.10.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar!/" />
       </CLASSES>
@@ -308,7 +302,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.0">
+    <library name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-core" version="2.10.0" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar!/" />
       </CLASSES>
@@ -319,7 +314,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.1">
+    <library name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-databind" version="2.10.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar!/" />
       </CLASSES>
@@ -330,7 +326,20 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.google.code.findbugs:jsr305:3.0.2">
+    <library name="Maven: com.github.discord-jda:JDA:v4.4.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.github.discord-jda" artifactId="JDA" version="v4.4.0" />
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/discord-jda/JDA/v4.4.0/JDA-v4.4.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/discord-jda/JDA/v4.4.0/JDA-v4.4.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/github/discord-jda/JDA/v4.4.0/JDA-v4.4.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.google.code.findbugs:jsr305:3.0.2" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.google.code.findbugs" artifactId="jsr305" version="3.0.2" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar!/" />
       </CLASSES>
@@ -341,7 +350,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.google.code.gson:gson:2.8.1">
+    <library name="Maven: com.google.code.gson:gson:2.8.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.google.code.gson" artifactId="gson" version="2.8.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1.jar!/" />
       </CLASSES>
@@ -352,7 +362,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.mashape.unirest:unirest-java:1.4.9">
+    <library name="Maven: com.mashape.unirest:unirest-java:1.4.9" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.mashape.unirest" artifactId="unirest-java" version="1.4.9" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9.jar!/" />
       </CLASSES>
@@ -363,7 +374,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.moandjiezana.toml:toml4j:0.7.2">
+    <library name="Maven: com.moandjiezana.toml:toml4j:0.7.2" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.moandjiezana.toml" artifactId="toml4j" version="0.7.2" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2.jar!/" />
       </CLASSES>
@@ -374,7 +386,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/moandjiezana/toml/toml4j/0.7.2/toml4j-0.7.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.neovisionaries:nv-websocket-client:2.14">
+    <library name="Maven: com.neovisionaries:nv-websocket-client:2.14" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.neovisionaries" artifactId="nv-websocket-client" version="2.14" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar!/" />
       </CLASSES>
@@ -385,7 +398,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.sedmelluq:lava-common:1.1.2">
+    <library name="Maven: com.sedmelluq:lava-common:1.1.2" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.sedmelluq" artifactId="lava-common" version="1.1.2" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lava-common/1.1.2/lava-common-1.1.2.jar!/" />
       </CLASSES>
@@ -396,7 +410,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lava-common/1.1.2/lava-common-1.1.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.sedmelluq:lavaplayer-natives:1.3.13">
+    <library name="Maven: com.sedmelluq:lavaplayer-natives:1.3.13" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.sedmelluq" artifactId="lavaplayer-natives" version="1.3.13" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer-natives/1.3.13/lavaplayer-natives-1.3.13.jar!/" />
       </CLASSES>
@@ -407,7 +422,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer-natives/1.3.13/lavaplayer-natives-1.3.13-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.sedmelluq:lavaplayer:1.3.73">
+    <library name="Maven: com.sedmelluq:lavaplayer:1.3.73" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.sedmelluq" artifactId="lavaplayer" version="1.3.73" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.73/lavaplayer-1.3.73.jar!/" />
       </CLASSES>
@@ -418,7 +434,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/sedmelluq/lavaplayer/1.3.73/lavaplayer-1.3.73-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.squareup.okhttp3:okhttp:3.13.0">
+    <library name="Maven: com.squareup.okhttp3:okhttp:3.13.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.squareup.okhttp3" artifactId="okhttp" version="3.13.0" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.13.0/okhttp-3.13.0.jar!/" />
       </CLASSES>
@@ -429,7 +446,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.13.0/okhttp-3.13.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.squareup.okio:okio:1.17.2">
+    <library name="Maven: com.squareup.okio:okio:1.17.2" type="java-imported" external-system-id="Maven">
+      <properties groupId="com.squareup.okio" artifactId="okio" version="1.17.2" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar!/" />
       </CLASSES>
@@ -440,7 +458,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.17.2/okio-1.17.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: commons-codec:commons-codec:1.6">
+    <library name="Maven: commons-codec:commons-codec:1.6" type="java-imported" external-system-id="Maven">
+      <properties groupId="commons-codec" artifactId="commons-codec" version="1.6" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6.jar!/" />
       </CLASSES>
@@ -451,7 +470,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: commons-io:commons-io:2.6">
+    <library name="Maven: commons-io:commons-io:2.6" type="java-imported" external-system-id="Maven">
+      <properties groupId="commons-io" artifactId="commons-io" version="2.6" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar!/" />
       </CLASSES>
@@ -462,7 +482,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: commons-logging:commons-logging:1.1.3">
+    <library name="Maven: commons-logging:commons-logging:1.1.3" type="java-imported" external-system-id="Maven">
+      <properties groupId="commons-logging" artifactId="commons-logging" version="1.1.3" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar!/" />
       </CLASSES>
@@ -473,7 +494,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: commons-net:commons-net:3.6">
+    <library name="Maven: commons-net:commons-net:3.6" type="java-imported" external-system-id="Maven">
+      <properties groupId="commons-net" artifactId="commons-net" version="3.6" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar!/" />
       </CLASSES>
@@ -484,7 +506,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: eu.medsea.mimeutil:mime-util:2.1.3">
+    <library name="Maven: eu.medsea.mimeutil:mime-util:2.1.3" type="java-imported" external-system-id="Maven">
+      <properties groupId="eu.medsea.mimeutil" artifactId="mime-util" version="2.1.3" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/eu/medsea/mimeutil/mime-util/2.1.3/mime-util-2.1.3.jar!/" />
       </CLASSES>
@@ -495,7 +518,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/eu/medsea/mimeutil/mime-util/2.1.3/mime-util-2.1.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: fr.bmartel:http-endec:1.04">
+    <library name="Maven: fr.bmartel:http-endec:1.04" type="java-imported" external-system-id="Maven">
+      <properties groupId="fr.bmartel" artifactId="http-endec" version="1.04" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/fr/bmartel/http-endec/1.04/http-endec-1.04.jar!/" />
       </CLASSES>
@@ -506,7 +530,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/fr/bmartel/http-endec/1.04/http-endec-1.04-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: fr.bmartel:jspeedtest:1.32.1">
+    <library name="Maven: fr.bmartel:jspeedtest:1.32.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="fr.bmartel" artifactId="jspeedtest" version="1.32.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/fr/bmartel/jspeedtest/1.32.1/jspeedtest-1.32.1.jar!/" />
       </CLASSES>
@@ -517,7 +542,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/fr/bmartel/jspeedtest/1.32.1/jspeedtest-1.32.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: log4j:log4j:1.2.17">
+    <library name="Maven: log4j:log4j:1.2.17" type="java-imported" external-system-id="Maven">
+      <properties groupId="log4j" artifactId="log4j" version="1.2.17" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/" />
       </CLASSES>
@@ -528,7 +554,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: mysql:mysql-connector-java:8.0.8-dmr">
+    <library name="Maven: mysql:mysql-connector-java:8.0.8-dmr" type="java-imported" external-system-id="Maven">
+      <properties groupId="mysql" artifactId="mysql-connector-java" version="8.0.8-dmr" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.8-dmr/mysql-connector-java-8.0.8-dmr.jar!/" />
       </CLASSES>
@@ -550,7 +577,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/net/dv8tion/JDA/5.0.0-alpha.9/JDA-5.0.0-alpha.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.iharder:base64:2.3.9">
+    <library name="Maven: net.iharder:base64:2.3.9" type="java-imported" external-system-id="Maven">
+      <properties groupId="net.iharder" artifactId="base64" version="2.3.9" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/net/iharder/base64/2.3.9/base64-2.3.9.jar!/" />
       </CLASSES>
@@ -561,7 +589,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/net/iharder/base64/2.3.9/base64-2.3.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.java.dev.jna:jna:4.4.0">
+    <library name="Maven: net.java.dev.jna:jna:4.4.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="net.java.dev.jna" artifactId="jna" version="4.4.0" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar!/" />
       </CLASSES>
@@ -572,7 +601,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/4.4.0/jna-4.4.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.sf.trove4j:trove4j:3.0.3">
+    <library name="Maven: net.sf.trove4j:trove4j:3.0.3" type="java-imported" external-system-id="Maven">
+      <properties groupId="net.sf.trove4j" artifactId="trove4j" version="3.0.3" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar!/" />
       </CLASSES>
@@ -583,7 +613,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.commons:commons-collections4:4.1">
+    <library name="Maven: org.apache.commons:commons-collections4:4.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.commons" artifactId="commons-collections4" version="4.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar!/" />
       </CLASSES>
@@ -605,7 +636,20 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.1">
+    <library name="Maven: org.apache.commons:commons-lang3:3.14.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.commons" artifactId="commons-lang3" version="3.14.0" />
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.httpcomponents" artifactId="httpasyncclient" version="4.1.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.1/httpasyncclient-4.1.1.jar!/" />
       </CLASSES>
@@ -616,7 +660,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.1/httpasyncclient-4.1.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpclient:4.3.6">
+    <library name="Maven: org.apache.httpcomponents:httpclient:4.3.6" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.3.6" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar!/" />
       </CLASSES>
@@ -627,7 +672,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4">
+    <library name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.httpcomponents" artifactId="httpcore-nio" version="4.4.4" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4.jar!/" />
       </CLASSES>
@@ -638,7 +684,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpcore:4.3.3">
+    <library name="Maven: org.apache.httpcomponents:httpcore:4.3.3" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.httpcomponents" artifactId="httpcore" version="4.3.3" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar!/" />
       </CLASSES>
@@ -649,7 +696,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpmime:4.5.2">
+    <library name="Maven: org.apache.httpcomponents:httpmime:4.5.2" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.apache.httpcomponents" artifactId="httpmime" version="4.5.2" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar!/" />
       </CLASSES>
@@ -660,7 +708,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.brunocvcunha.inutils4j:inutils4j:0.4">
+    <library name="Maven: org.brunocvcunha.inutils4j:inutils4j:0.4" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.brunocvcunha.inutils4j" artifactId="inutils4j" version="0.4" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/brunocvcunha/inutils4j/inutils4j/0.4/inutils4j-0.4.jar!/" />
       </CLASSES>
@@ -671,7 +720,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/brunocvcunha/inutils4j/inutils4j/0.4/inutils4j-0.4-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.brunocvcunha.jiphy:jiphy:1.0">
+    <library name="Maven: org.brunocvcunha.jiphy:jiphy:1.0" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.brunocvcunha.jiphy" artifactId="jiphy" version="1.0" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/brunocvcunha/jiphy/jiphy/1.0/jiphy-1.0.jar!/" />
       </CLASSES>
@@ -682,7 +732,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/brunocvcunha/jiphy/jiphy/1.0/jiphy-1.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.jetbrains:annotations:16.0.1">
+    <library name="Maven: org.jetbrains:annotations:16.0.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.jetbrains" artifactId="annotations" version="16.0.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.1/annotations-16.0.1.jar!/" />
       </CLASSES>
@@ -693,7 +744,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.1/annotations-16.0.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.json:json:20160212">
+    <library name="Maven: org.json:json:20160212" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.json" artifactId="json" version="20160212" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212.jar!/" />
       </CLASSES>
@@ -704,7 +756,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20160212/json-20160212-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.jsoup:jsoup:1.12.1">
+    <library name="Maven: org.jsoup:jsoup:1.12.1" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.jsoup" artifactId="jsoup" version="1.12.1" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.12.1/jsoup-1.12.1.jar!/" />
       </CLASSES>
@@ -715,7 +768,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.12.1/jsoup-1.12.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.slf4j:slf4j-api:1.7.25">
+    <library name="Maven: org.slf4j:slf4j-api:1.7.25" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.slf4j" artifactId="slf4j-api" version="1.7.25" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/" />
       </CLASSES>
@@ -726,7 +780,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.slf4j:slf4j-log4j12:1.5.6">
+    <library name="Maven: org.slf4j:slf4j-log4j12:1.5.6" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.slf4j" artifactId="slf4j-log4j12" version="1.5.6" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.5.6/slf4j-log4j12-1.5.6.jar!/" />
       </CLASSES>
@@ -737,7 +792,8 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.5.6/slf4j-log4j12-1.5.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.slf4j:slf4j-simple:1.7.5">
+    <library name="Maven: org.slf4j:slf4j-simple:1.7.5" type="java-imported" external-system-id="Maven">
+      <properties groupId="org.slf4j" artifactId="slf4j-simple" version="1.7.5" />
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar!/" />
       </CLASSES>

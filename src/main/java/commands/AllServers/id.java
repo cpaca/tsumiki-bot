@@ -1,8 +1,7 @@
 package commands.AllServers;
 
 import core.CommandProcessor;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 public class id extends CommandProcessor {
 
@@ -13,7 +12,7 @@ public class id extends CommandProcessor {
     }
 
     @Override
-    protected void ProcessSlashCommand(SlashCommandInteractionEvent event) {
+    protected void ProcessSlashCommand(SlashCommandEvent event) {
         event.reply(
                 "DiscordID is an ID which discord automatically gives you upon account creation. \n" +
                         "Every account has a DiscordID. The biggest usage of DiscordID (that I know) \n" +
